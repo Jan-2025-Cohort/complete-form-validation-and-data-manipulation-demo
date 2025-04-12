@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3‑Input Validation Demo</title>
+  <style>
+    body { font-family: sans-serif; margin: 2em; }
+    form div { margin-bottom: 1em; }
+    label { display: inline-block; width: 100px; }
+    .error-text {color: red; font-size: 0.9em;}
+  </style>
+</head>
+<body>
+
+  <h1>3‑Input Validation Demo</h1>
+
+  <form id="demoForm" novalidate>
+    <!-- 1. Text Input -->
+    <div>
+      <label for="fullName">Name:</label>
+      <input
+        type="text"
+        id="fullName"
+        name="Name"
+        required
+        minlength="2"
+        title="Please enter at least 2 letters (letters and spaces only)"
+      />
+      <p id="fullNameError" class="error-text"></p>
+    </div>
+
+    <!-- 2. Radio Buttons -->
+    <div id="subscriptionGroup">
+      <span>Subscription:</span>
+      <input
+        type="radio"
+        id="free"
+        name="subscription"
+        value="free"
+      />
+      <label for="free">Free</label>
+
+      <input
+        type="radio"
+        id="premium"
+        name="subscription"
+        value="premium"
+      />
+      <label for="premium">Premium</label>
+      <p id="subscriptionError" class="error-text"></p>
+    </div>
+
+    <!-- 3. Password Input -->
+    <div>
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        minlength="6"
+        title="Password must be at least 6 characters long"
+      />
+      <p id="passwordError" class="error-text"></p>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="output">
+
+  </div>
+  <script src="simpleform.js"></script>
+</body>
+</html>
